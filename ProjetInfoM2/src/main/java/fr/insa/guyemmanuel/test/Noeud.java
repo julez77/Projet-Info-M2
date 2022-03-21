@@ -13,7 +13,7 @@ import java.util.List;
  * @author eguy01
  */
 public abstract class Noeud  extends élements{
-
+//nouveau commentaire
    
   private  double px ;
   private  double  py ;
@@ -93,9 +93,9 @@ public Noeud (double px , double py){
     /**
      * @return the barredebut
      */
-    public List<Barre> getBarredebut() {
-        return barredebut;
-    }
+public List<Barre> getBarredebut() {
+    return barredebut;
+}
 
     /**
      * @return the barrefin
