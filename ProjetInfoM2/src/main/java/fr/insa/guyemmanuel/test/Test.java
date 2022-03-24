@@ -9,7 +9,7 @@ package fr.insa.guyemmanuel.test;
 
 import static fr.insa.guyemmanuel.test.Noeud.entrenoeud;
 
-//salut azaeraesdjhqeesrtyfioipo
+//salut ca marche 
 /**
  *
  * @author eguy01
