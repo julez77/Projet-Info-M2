@@ -57,7 +57,10 @@ public abstract class Noeud  extends élements{
   }
  public static  Noeud entrenoeud(){
    double  type ;
-   System.out.println("entrer le type de  noeud 0 pour noueud 1 pour appuisimple  2 pour appui-glissant");
+   System.out.println("entrer le type de  noeud: ");
+   System.out.println("0) pour un NoeudSimple");
+   System.out.println("1) pour un appuis simple");
+   System.out.println("2) pour un appuis glissant");
      type = Lire.d();
    System.out.println("abs");
      double px = Lire.d();
@@ -74,10 +77,10 @@ public abstract class Noeud  extends élements{
          
      }
    if  (type == 1){
-       return new Appuisimple(px,py);
+       return new AppuiSimple(px,py);
    }  
      if (type == 2){
-         return new Appuiglissant(px,py);
+         return new AppuiGlissant(px,py);
      } else {
         return null ; }
      

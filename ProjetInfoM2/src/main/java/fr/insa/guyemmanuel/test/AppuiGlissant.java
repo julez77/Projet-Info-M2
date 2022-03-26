@@ -9,14 +9,14 @@ package fr.insa.guyemmanuel.test;
  *
  * @author eguy01
  */
-public class Appuiglissant extends NoeudAppui {
+public class AppuiGlissant extends NoeudAppui {
    
     
                 
    
     
 
-  public Appuiglissant(double px, double py){
+  public AppuiGlissant(double px, double py){
       
       super(px,py);     
       

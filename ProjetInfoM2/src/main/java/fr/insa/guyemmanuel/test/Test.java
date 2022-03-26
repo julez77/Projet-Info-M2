@@ -32,12 +32,12 @@ System.out.println(penaldo.noeudOppose(benz));
 double angl = penaldo.angle();
 System.out.println(angl);
 Groupe teste = new Groupe();
-teste.ajoutbarre(penaldo);
+teste.ajouterBarre(penaldo);
 
 teste.maxIDbarre();
 System.out.println(teste.maxIDbarre());
 System.out.println(teste.maxIDnoeud());
-teste.menutxt();
+teste.menuTexte();
 // TODO code application logic here
     }
     

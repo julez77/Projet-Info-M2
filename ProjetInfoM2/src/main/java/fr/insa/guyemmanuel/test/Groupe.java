@@ -40,8 +40,6 @@ public int maxIDnoeud(){
                    nmax = this.listenoeud.get(i);
         }
         
-        
-        
     }
     return max ;
     
@@ -64,7 +62,7 @@ public int maxIDnoeud(){
     return max ;
     
 }      
-   public void ajoutnoeud(Noeud  n){
+   public void ajouterNoeud(Noeud  n){
     if (listenoeud.contains(n)== true){
         throw new Error("est deja dans  le groupe");
     }else {
@@ -75,15 +73,15 @@ public int maxIDnoeud(){
     
 }
     
-    public void ajoutbarre(Barre  b){
+    public void ajouterBarre(Barre  b){
    if (listebarre.contains(b)== true){
        throw  new Error("deja dans  le grp");
    }else{
         
         b.setId(this.maxIDbarre()+1);
     listebarre.add(b);
-    this.ajoutnoeud(b.getNoeud1());
-    this.ajoutnoeud(b.getNoeud2());
+    this.ajouterNoeud(b.getNoeud1());
+    this.ajouterNoeud(b.getNoeud2());
    }
 }    
         
@@ -93,27 +91,43 @@ public int maxIDnoeud(){
     public int size() {
         return (this.listebarre.size()+ this.listenoeud.size());
     }
-
-   @Override
+    
+public static String indente(String toIndente, String prefix) {
+        return prefix + toIndente.replaceAll("\n", "\n" + prefix);
+    }
+   
+  /** public String toSting(){
+     String res = "Treillis {\n";
+     for (int i =0; i<this.size();i++){
+         res =res + indente(this.listebarre.get(i).toString(),"")+ "\n";
+    }
+     return res + "}";
+     
+   }**/
    public String toString(){
     return "barres du groupe ( et leur noeuds) :" + listebarre.toString()                     ;
 }
 
-public void menutxt(){
+public void menuTexte(){
     
-   System.out.println("afficher treillis(1),créer nouveau noeud(2), ajouter barre netre 2 noeud(3),Supprimer une  barre(4),supprimer  un noeud(5),ne rien faire (autre  nombre) ");
+   System.out.println("1) afficher treillis");
+   System.out.println("2) créer un nouveau noued");
+   System.out.println("3) créer une nouvelle barre à partire de 2 Noeuds");
+   System.out.println("4) supprimer une barre");
+   System.out.println("5) supprimer un noeud");
+   System.out.println("autres: ne rien faire");
    int choice = Lire.i();
  while ((choice==1)||(choice==2)||(choice==3)||(choice==4)||(choice==5) ){
    if ( choice == 1){
-       this.toString();
+       System.out.println(this.toString());
    } 
    if ( choice == 2){
      Noeud n =entrenoeud();
-       this.ajoutnoeud(n);
+       this.ajouterNoeud(n);
    }
     if ( choice == 3){
         
-       this.ajoutbarre(new Barre(this.choisinoeud(),this.choisinoeud()));
+       this.ajouterBarre(new Barre(this.choisinoeud(),this.choisinoeud()));
    }
     if ( choice == 4){
        this.removebarre(this.choisibarre());
@@ -121,7 +135,12 @@ public void menutxt(){
    if ( choice == 5){
        
    }
-   System.out.println("afficher treillis(1),créer nouveau noeud(2), ajouter barre netre 2 noeud(3),Supprimer une  barre(4),supprimer  un noeud(5),ne rien faire (autre  nombre) ");
+   System.out.println("1) afficher treillis");
+   System.out.println("2) créer un nouveau noued");
+   System.out.println("3) créer une nouvelle barre à partire de 2 Noeuds");
+   System.out.println("4) supprimer une barre");
+   System.out.println("5) supprimer un noeud");
+   System.out.println("autres: ne rien faire");
    choice = Lire.i();
    
    
@@ -162,7 +181,35 @@ public Barre choisibarre(){
 
 
 
-
+    public static Groupe groupeTest() {
+        NoeudSimple p1 = new NoeudSimple(10, 10);
+        NoeudSimple p2 = new NoeudSimple(100, 10);
+        //NoeudSimple p3 = new NoeudSimple(100, 100);
+        //NoeudSimple p4 = new NoeudSimple(10, 100);
+        AppuiGlissant p5 = new AppuiGlissant(50, 50);
+        //AppuiGlissant p6 = new AppuiGlissant(500, 500);
+        Barre s1 = new Barre(p1, p2);
+        //Barre s2 = new Barre(p2, p3);
+        //Barre s3 = new Barre(p3, p1);
+        //Barre s4 = new Barre(p1, p4);
+        Groupe treillis1 = new Groupe();
+        treillis1.ajouterBarre(s1);
+        //treillis1.ajouterBarre(s2);
+       // treillis1.ajouterBarre(s3);
+        Groupe treillis2 = new Groupe();
+        treillis2.ajouterNoeud(p5);
+        //treillis2.ajouterNoeud(p6);
+        //treillis2.ajouterBarre(s4);
+       
+        for (int i = 0; i < 5; i++) {
+            treillis2.ajouterNoeud(new NoeudSimple(Math.random() * 500, Math.random() * 500 ));
+        }
+        for (int i = 0; i < 3; i++) {
+            treillis2.ajouterBarre(new Barre(new NoeudSimple(Math.random() * 500, Math.random() * 500),
+                    new NoeudSimple(Math.random() * 500, Math.random() * 500)));
+        }
+        return treillis2;
+    }
 
 
 

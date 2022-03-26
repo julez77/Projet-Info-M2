@@ -9,10 +9,10 @@ import java.util.List;
  *
  * @author eguy01
  */
-public class Appuisimple extends NoeudAppui {
+public class AppuiSimple extends NoeudAppui {
     
     
-    public Appuisimple(double px, double py){
+    public AppuiSimple(double px, double py){
         super(px,py);
    
 
