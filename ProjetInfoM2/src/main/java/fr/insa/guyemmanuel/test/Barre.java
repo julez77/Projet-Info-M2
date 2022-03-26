@@ -4,7 +4,7 @@
  */
 package fr.insa.guyemmanuel.test;
 
-//import static java.lang.Math.sqrt;
+//import static java.lang.Math.sqrt;test
 
 import static java.lang.Math.sqrt;
 /**
