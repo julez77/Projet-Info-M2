@@ -22,9 +22,9 @@ public class Test {
      */
     public static void main(String[] args) {
         System.out.println("lol");
-      NoeudSimple pessi = new NoeudSimple(8,7);
+      NoeudSimple pessi = new NoeudSimple(0,0);
       NoeudSimple benz;
-        benz =  new NoeudSimple(14,5);
+        benz =  new NoeudSimple(1,1);
        System.out.println(pessi);
 Barre penaldo = new Barre(pessi,benz);
 System.out.println(penaldo);

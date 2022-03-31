@@ -19,6 +19,14 @@ private double traction ;
 private double compre;
 private int id ;
 
+
+public Vecteur2d vecteurBarre(){
+    double px = this.getNoeud2().getPx() - this.getNoeud1().getPx() ;
+    double py =  this.getNoeud2().getPy() - this.getNoeud1().getPy() ;
+    Vecteur2d vecteur = new Vecteur2d (px, py) ;
+    return vecteur ;
+}
+
     /**
      * @return the noeud1
      */
@@ -112,6 +120,8 @@ private int id ;
     double temp = (dot/(magv1*magv2));
     return Math.acos(temp);
     }
+    
+    
     /**
      * @return the prix
      */

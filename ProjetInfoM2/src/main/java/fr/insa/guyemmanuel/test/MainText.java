@@ -12,7 +12,7 @@ public class MainText {
     public static void menuInitial(){
             int rep = -1;
             while(rep != 0){
-                System.out.println("Initialisation du tréllis");
+                System.out.println("Initialisation du treillis");
                 System.out.println("1) commencer avec un treillis vierge");
                 System.out.println("2) commencer avec le treillis de test");
                 System.out.println("0) quitter");
