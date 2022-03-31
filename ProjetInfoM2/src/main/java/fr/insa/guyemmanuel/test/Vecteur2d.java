@@ -5,6 +5,9 @@
  */
 package fr.insa.guyemmanuel.test;
 
+import static java.lang.Math.acos;
+import static java.lang.Math.sqrt;
+
 /**
  *
  * @author eguy01
@@ -17,7 +20,24 @@ public class Vecteur2d {
        this.vy = vy ;
        
    }
-
+   
+   public double length(){
+       return sqrt(Math.pow(this.getVx(), 2) + Math.pow(this.getVy(), 2)) ;
+              
+   }
+   
+   public static double angleVecteurs (Vecteur2d v1, Vecteur2d v2){
+       double produitScalaire = v1.getVx() * v2.getVx() + v1.getVy() * v2.getVy() ;
+       return acos(produitScalaire/(v1.length()* v2.length())) ;
+       
+   }
+   
+   public double angleHorizontale (){
+       
+       return acos(this.getVx()/this.length());
+       
+   }
+   
     /**
      * @return the vx
      */
@@ -51,7 +71,11 @@ public class Vecteur2d {
      
  }   
     
-    
+ public static void main(String[] args){
+     Vecteur2d v1 = new Vecteur2d (0, 1);
+     Vecteur2d v2 = new Vecteur2d (1, -1);
+     System.out.println( angleVecteurs(v1, v2));
+ }   
     
     
     
