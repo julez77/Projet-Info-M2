@@ -20,7 +20,7 @@ public class AppuiSimple extends NoeudAppui {
                 }
     @Override
    public String toString(){
-      return  "["+this.getPx()+","+this.getPy()+"]appuisimple ";
+      return  "["+this.getPx()+","+this.getPy()+"]appuisimple id" +this.getId();
   } 
     
     

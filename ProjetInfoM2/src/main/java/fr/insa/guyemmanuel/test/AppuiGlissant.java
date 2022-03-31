@@ -27,7 +27,7 @@ public class AppuiGlissant extends NoeudAppui {
   
     @Override
  public String toString(){
-      return  "["+this.getPx()+","+this.getPy()+"] appuiglissant";
+      return  "["+this.getPx()+","+this.getPy()+"] appuiglissant id "+this.getId();
   }   
     
     

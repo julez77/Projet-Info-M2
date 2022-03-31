@@ -64,7 +64,7 @@ public int maxIDnoeud(){
 }      
    public void ajouterNoeud(Noeud  n){
     if (listenoeud.contains(n)== true){
-        throw new Error("est deja dans  le groupe");
+        System.out.println(n.getId()+ "est deja dans  le groupe");
     }else {
        
        
@@ -74,15 +74,27 @@ public int maxIDnoeud(){
 }
     
     public void ajouterBarre(Barre  b){
-   if (listebarre.contains(b)== true){
-       throw  new Error("deja dans  le grp");
-   }else{
+ 
+        boolean barreexiste = false ;
+        if(this.listebarre.isEmpty()){
+            barreexiste = false ;
+        }
+        else{
         
-        b.setId(this.maxIDbarre()+1);
-    listebarre.add(b);
-    this.ajouterNoeud(b.getNoeud1());
-    this.ajouterNoeud(b.getNoeud2());
-   }
+       for(int i=0; i<listebarre.size() ; i++){
+            if(b==listebarre.get(i)){
+                barreexiste = true ;
+                
+            }
+       }
+        }
+            if(barreexiste == false){
+           ajouterNoeud(b.getNoeud1());
+            ajouterNoeud(b.getNoeud2());
+            
+                b.setId((this.maxIDbarre() + 1));
+                listebarre.add(b) ;
+            }
 }    
         
     
@@ -105,7 +117,7 @@ public static String indente(String toIndente, String prefix) {
      
    }**/
    public String toString(){
-    return "barres du groupe ( et leur noeuds) :" + listebarre.toString()                     ;
+    return "barres du groupe ( et leur noeuds) :" + listebarre.toString()  +"noeuds du groupe" +listenoeud.toString();                   
 }
 
 public void menuTexte(){

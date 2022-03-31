@@ -26,6 +26,6 @@ public class NoeudSimple extends Noeud {
      */
     @Override
     public String toString(){
-      return  "["+this.getPx()+","+this.getPy()+"] noeudsimple";
+      return  "["+this.getPx()+","+this.getPy()+"] noeudsimple id " + this.getId();
   }
 }
