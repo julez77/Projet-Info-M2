@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class MainFX extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Button b= new Button ("ahhhh!!");
+        Button b= new Button ("hhh!!");
         Scene s= new Scene (b);
         primaryStage.setScene(s);
         primaryStage.show();
